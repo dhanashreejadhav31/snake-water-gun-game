@@ -1,0 +1,26 @@
+
+import random
+
+choices = ["snake", "water", "gun"]
+
+computer = random.choice(choices)
+you = input("Enter your choice (snake/water/gun): ").lower().strip()
+
+print("Your choice:", you)
+print("Computer's choice:", computer)
+
+if you not in choices:
+    print("Invalid choice! Please try again.")
+
+elif computer == you:
+    print("It's a draw!")
+
+elif (
+    (you == "snake" and computer == "water")
+    or (you == "water" and computer == "gun")
+    or (you == "gun" and computer == "snake")
+):
+    print("You win!")
+
+else:
+    print("You lose!")
